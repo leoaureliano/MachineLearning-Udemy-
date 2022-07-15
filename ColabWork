@@ -24,7 +24,7 @@ base_credit #defaulted
 #base_credit allow to see the data and is possible to visualise in many forms #
 
 base_credit.describe()
-# visualise some statistics such as the avarenge, std, min, max, 25%, 50% and, 75% #
+# visualise some statistics such as the avarenge(mean), std, min, max, 25%, 50% and, 75% #
 
 base_credit[base_credit['income'] >= 69995.685578]
 # call referent client #
@@ -53,6 +53,27 @@ graphic = px.scatter_matrix(base_credit, dimensions=['age', 'income', 'loan'], c
 graphic.show()
 #Now the fuction graphic demonstrate the comparison btween and they respectively scatter graphics age, income and loan #
 # the color part will demostrate the difference in default clients putting a collor on it #
+
+base_credit.loc[base_credit['age'] < 0]
+
+base_credit2 = base_credit.drop('age', axis = 1)
+base_credit2
+#delete all the data in the column age #
+
+base_credit3 = base_credit.drop(base_credit[base_credit['age'] < 0].index)
+base_credit3
+#only remove the selected data #
+
+base_credit.loc[base_credit['age'] < 0]
+#just to confirm 
+
+base_credit3.loc[base_credit['age'] < 0]
+
+base_credit.mean()
+#Show the avarenge rate about the data #
+
+base_credit['age'].mean()
+#Show the avarenge rate of ages #
 
 
 
