@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt
 import plotly.express as px
+import seaborn as sns
 
 
 from google.colab import drive 
@@ -30,5 +31,31 @@ base_credit[base_credit['income'] >= 69995.685578]
 
 base_credit[base_credit['loan'] <= 1.377630]
 # client with the minimum defaut #
+
+np.unique(base_credit['default'])
+# print array([0, 1])#
+
+np.unique(base_credit['default'], return_counts=True)
+# (array([0, 1]), array([1717,  283])) #
+
+sns.countplot(x = base_credit['default']);
+#This will bring my first graphic# 
+#This ; isn't necessary, is just to don't show the matplotlib message  #
+
+plt.hist(x = base_credit['age']);
+#Show the data about age #
+
+graf = px.scatter_matrix(base_credit, dimensions=['age'])
+graf.show()
+#create a graf fuction and show a grafic about the age #
+
+graphic = px.scatter_matrix(base_credit, dimensions=['age', 'income', 'loan'], color = 'default')
+graphic.show()
+#Now the fuction graphic demonstrate the comparison btween and they respectively scatter graphics age, income and loan #
+# the color part will demostrate the difference in default clients putting a collor on it #
+
+
+
+
 
 
