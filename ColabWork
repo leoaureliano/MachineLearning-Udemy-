@@ -62,7 +62,7 @@ base_credit2
 
 base_credit3 = base_credit.drop(base_credit[base_credit['age'] < 0].index)
 base_credit3
-#only remove the selected data #
+#only remove the selected data, you can change age for others selections such loan #
 
 base_credit.loc[base_credit['age'] < 0]
 #just to confirm 
