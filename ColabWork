@@ -75,6 +75,30 @@ base_credit.mean()
 base_credit['age'].mean()
 #Show the avarenge rate of ages #
 
+base_credit.isnull()
+#Show all the data with null values as True
+
+base_credit.isnull().sum()
+#Show all the date with null values and the sum of all true in different sections #
+
+#base_credit.loc[pd.isnull(base_credit['age'])]
+#Will show the clients with Nan value( means Not a Number) and happen when does not have a numerical value #
+
+base_credit['age'].fillna(base_credit['age'].mean(), inplace = True)
+#With this line you will fill all the NaN values in age with the average of the database #
+#The command inplace will not only run in your memory but will change the database in the hard memory #
+
+base_credit.loc[base_credit['clientid'].isin([29,31,32])]
+#or #
+base_credit.loc[(base_credit['clientid'] == 29) | (base_credit['clientid'] == 31) | (base_credit['clientid'] == 32)]
+#Will show the value of this clients #
+
+
+
+
+
+
+
 
 
 
