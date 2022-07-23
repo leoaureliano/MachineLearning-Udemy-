@@ -100,10 +100,16 @@ X_credit
 #Just to see the data #
 
 Type(X_credit)
-#numpy #
+#numpy.ndarray #
 
 Y_credit = base_credit.iloc[:, 4]
-#numpy #
+#Create the Y that is just the value 4 client #
+
+Y_credit
+#call #
+
+Type(Y_credit)
+#numpy.ndarray #
 
 
 
