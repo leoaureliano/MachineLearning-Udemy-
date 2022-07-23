@@ -93,6 +93,18 @@ base_credit.loc[base_credit['clientid'].isin([29,31,32])]
 base_credit.loc[(base_credit['clientid'] == 29) | (base_credit['clientid'] == 31) | (base_credit['clientid'] == 32)]
 #Will show the value of this clients #
 
+X_credit = base_credit.iloc[:, 1:4].values
+#1 to 3 goes 1 to 3 #
+
+X_credit
+#Just to see the data #
+
+Type(X_credit)
+#numpy #
+
+Y_credit = base_credit.iloc[:, 4]
+#numpy #
+
 
 
 
